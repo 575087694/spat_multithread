@@ -1,6 +1,7 @@
 package spat;
 
 public interface Data {
+	
 	String MCTLSQL1 = "报文总数##select formatdatetime(MSGDEALSTIME, 'yyyy-MM-dd HH:00') as 时间段,count(*) as 报文总数,PROCERRMESG as 业务处理描述 from TABMCTL group by 时间段,业务处理描述";
 	String MCTLSQL2 = "按报文类型的报文总笔数##select formatdatetime(MSGDEALSTIME, 'yyyy-MM-dd HH:00') as 时间段,MSGTYPE as 报文类型,count(*) as 报文总数,PROCERRMESG as 业务处理描述 from TABMCTL group by 时间段,报文类型,业务处理描述";
 	String MCTLSQL3 = "单位时间内运行进程数##select formatdatetime(MSGDEALSTIME, 'yyyy-MM-dd HH:00') as 时间段,count(distinct(PID)) as 进程数 from TABMCTL group by 时间段";
